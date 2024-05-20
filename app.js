@@ -9,6 +9,7 @@ var logger = require('morgan');           //HTTPリクエストのログ出力
 var indexRouter = require('./routes/index');  //index.jsは/indexにアクセスしたときの処理
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
+var notesRouter = require('./routes/notes');
 
 //Expressのオブジェクトを作成
 var app = express();
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hello', helloRouter);
+app.use('/notes', notesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
