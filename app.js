@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');  //index.jsは/indexにアクセス
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 var notesRouter = require('./routes/notes');
+var db_notesRouter = require('./routes/db_notes');
 
 //Expressのオブジェクトを作成
 var app = express();
@@ -30,6 +31,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hello', helloRouter);
 app.use('/notes', notesRouter);
+app.use('/db_notes', db_notesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
