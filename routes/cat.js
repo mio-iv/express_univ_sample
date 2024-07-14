@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const request = require('request');
+const cors = require('cors');   //corsミドルウェアを追加
 
+router.use(cors()); //corsミドルウェアを使用（CORS（Cross-Origin Resource Sharing）はバックエンド側に設定）
 router.get('/', async(req, res) =>{
-    request('https://dog.ceo/api/breeds/image/random', function(error, response, body) {
+    request('https://api.thecatapi.com/v1/images/search', function(error, response, body) {
         if(!error && response.statusCode == 200) {
             const data= JSON.parse(body);
 
