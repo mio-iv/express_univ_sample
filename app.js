@@ -13,6 +13,7 @@ var notesRouter = require('./routes/notes');
 var db_notesRouter = require('./routes/db_notes');
 var catRouter = require('./routes/cat');
 var dogRouter = require('./routes/dog');
+var notes_from_bRouter = require('./routes/notes_from_b');
 
 //Expressのオブジェクトを作成
 var app = express();
@@ -36,6 +37,7 @@ app.use('/notes', notesRouter);
 app.use('/db_notes', db_notesRouter);
 app.use('/cat', catRouter);
 app.use('/dog', dogRouter);
+app.use('/notes_from_b', notes_from_bRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
